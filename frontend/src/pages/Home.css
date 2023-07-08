@@ -1,0 +1,15 @@
+.poster-box {
+    
+    transition: transform 0.7s;
+    
+    box-shadow: none;
+    cursor: pointer;
+  }
+  
+  
+  .poster-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+ 
+  

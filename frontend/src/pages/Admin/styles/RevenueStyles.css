@@ -1,0 +1,29 @@
+
+.table-container {
+  margin: 20px;
+    margin-top: 50px;
+    background-color:rgb(241, 201, 140);
+  }
+  
+  .revenue-table {
+    border-collapse: collapse;
+   
+  }
+  
+  .revenue-table th,
+  .revenue-table td {
+    border: 2px solid brown;
+    padding: 8px;
+    
+  }
+  
+  .table-head{
+    font-weight:bolder;
+    font-size: 30px;
+    
+   
+  }
+  .table-body{
+    text-align: center;
+    font-size: 25px;
+  }

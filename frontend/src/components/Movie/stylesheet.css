@@ -1,0 +1,19 @@
+.poster-box {
+    width: 800px;
+    height: 370px;
+    border-radius: 5px;
+    box-shadow: none;
+    /* margin: 5px; */
+    background-size: cover;
+    border: 10px solid white;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .poster-box.active {
+    transform: scale(1.2);
+  }
+  
+  .card-image {
+    width: 75%;
+  }
+  
