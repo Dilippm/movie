@@ -12,8 +12,20 @@ module.exports =async(email,subject,text)=>{
             auth:{
                 user:process.env.USER,
                 pass:process.env.PASS
+            },
+
+            mail: {
+                // This property is new.
+                smtp: {
+                  // This property is new.
+                  ssl: {
+                    // This property is new.
+                    version: "TLSv1.2"
+                  }
+                }
             }
-        })
+            
+                 })
         await transporter.sendMail({
             from:process.env.USER,
             to:email,
