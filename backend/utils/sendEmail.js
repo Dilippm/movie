@@ -4,14 +4,14 @@ const nodemailer = require("nodemailer");
 module.exports =async(email,subject,text)=>{
     try {
       
-        const transporter =nodemailer.createTransport({
-            host:process.env.HOST,
-            service:process.env.SERVICE,
-            port:Number(process.env.EMAIL_PORT),
-            secure:Boolean(process.env.SECURE),
+        const transporter=nodemailer.createTransport({
+            host:`sandbox.smtp.mailtrap.io`,
+            service:`Gmail`,
+            port:`587`,
+            secure:true,
             auth:{
-                user:process.env.USER,
-                pass:process.env.PASS
+                user:"dilipnambiarpm@gmail.com",
+                pass:"lbxowcudbehosvzr"
             },
 
             mail: {
