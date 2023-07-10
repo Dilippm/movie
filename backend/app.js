@@ -20,7 +20,7 @@ app.use(express.json());
 // Enable CORS
 app.use(
   cors({
-    origin: 'https://verdant-gumdrop-33ab81.netlify.app/',
+    origin: 'https://verdant-gumdrop-33ab81.netlify.app',
     credentials: true,
   })
 );
