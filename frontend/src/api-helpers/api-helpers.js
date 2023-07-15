@@ -449,7 +449,7 @@ export const editMovie = async (movieId, movieData,file) => {
     if (response.status!==200) {
       throw new Error('Failed to add theatre');
     }
-    const data = await response.json();
+    const data = await response.data;
     return data;
   } catch (error) {
     throw new Error(`Failed to add theatre: ${error.message}`);

@@ -31,7 +31,7 @@ const OwnerRoutes =()=>{
           <Route path ='/edit_theatre/:id' element={<OwnerProtectedRoutes><EditTheatre/></OwnerProtectedRoutes>}/>
           <Route path='/revenue_report' element={<OwnerProtectedRoutes><OwnerRevenue/></OwnerProtectedRoutes>}/>
           <Route path='/bookings' element ={<OwnerProtectedRoutes><Bookings/></OwnerProtectedRoutes>}/>
-          <Route path='/owner_user' element ={<OwnerProtectedRoutes><UserDetails/></OwnerProtectedRoutes>}/>
+          {/* <Route path='/owner_user' element ={<OwnerProtectedRoutes><UserDetails/></OwnerProtectedRoutes>}/> */}
           <Route path="*" element={<OwnerErrorPage/>} />
             </Routes>
         </>

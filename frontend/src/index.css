@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/Background.png');
+  background-image: url('https://img.freepik.com/free-photo/abstract-smooth-brown-wall-background-layout-design-web-template-business-report-with-smooth-circle-gradient-color_1258-54607.jpg?w=740&t=st=1688992519~exp=1688993119~hmac=a1c67c9e424eeb072950ad40f0856260045ef0e0ab4105a0681f698dd646a205');
   background-size: 200% 200%;
   animation: gradientAnimation 10s ease infinite;
 }

@@ -106,7 +106,7 @@ const Banner = () => {
         </Typography>
         
         <Box marginTop={4} marginLeft={3}>
-          <AddBanner onAddMovie={handleAddBanner} />
+          <AddBanner onAddBanner={handleAddBanner} />
         </Box>
 
         <Box width={'80%'} margin={'auto'}>

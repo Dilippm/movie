@@ -141,6 +141,23 @@ const Home = () => {
                 <UpCommingMovies/>
 
             </Box>
+            <Box display="flex" padding={5} justifyContent="center">
+                <Link
+                    to="/movies"
+                    style={{
+                        textDecoration: 'none'
+                    }}>
+                    <Button
+                        variant="outlined"
+                        sx={{
+                            margin: 'auto',
+                            color: 'white',
+                            border: '2px solid white'
+                        }}>
+                       <b>View All Movies</b> 
+                    </Button>
+                </Link>
+            </Box>
 
         </Box>
     </>
