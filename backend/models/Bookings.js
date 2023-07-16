@@ -1,35 +1,41 @@
 const mongoose = require("mongoose");
+const { v4: uuidv4 } = require("uuid");
 
 const bookingSchema = new mongoose.Schema(
   {
+    bookingId: {
+      type: String,
+      default: uuidv4,
+      unique: true,
+    },
     theater: {
       type: String,
-      required: true
+      required: true,
     },
     movie: {
       type: String,
-      required: true
+      required: true,
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     time: {
       type: String,
-      required: true
+      required: true,
     },
     amount: {
       type: String,
-      required: true
+      required: true,
     },
     seatNumber: [String],
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
-      required: true
-    }
+      required: true,
+    },
   },
-  { timestamps: true } 
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Booking", bookingSchema);

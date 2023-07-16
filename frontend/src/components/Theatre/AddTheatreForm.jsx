@@ -16,7 +16,7 @@ import { AddTheatre, getownerMovies } from '../../api-helpers/api-helpers';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const AddTheatreForm = ({ onAddTheatre }) => {
+const AddTheatreForm = ({ onAddTheatre,onClose }) => {
   const [open, setOpen] = useState(false);
   const [theatreData, setTheatreData] = useState({
     name: '',
@@ -97,12 +97,13 @@ const AddTheatreForm = ({ onAddTheatre }) => {
       isValid = false;
     }
 
-    if (!theatreData.seats) {
-      newErrors.seats = 'Seats is required';
+    if (!theatreData.seats || isNaN(theatreData.seats)) {
+      newErrors.seats = 'Seats is required and must be a number';
       isValid = false;
     }
-    if (!theatreData.price) {
-      newErrors.price = 'Price is required';
+  
+    if (!theatreData.price || isNaN(theatreData.price)) {
+      newErrors.price = 'Price is required and must be a number';
       isValid = false;
     }
 
@@ -127,31 +128,38 @@ const AddTheatreForm = ({ onAddTheatre }) => {
   
     try {
       const response = await AddTheatre(theatreData);
-      console.log('Theatre added successfully:', response);
-      handleClose(); 
-      setTheatreData({
-        name: '',
-        seats: '',
-        price:'',
-        timings: [],
-        movieName: '',
-      });
-      setErrors({
-        name: '',
-        seats: '',
-        price:'',
-        timings: '',
-        movieName: '',
-      });
-  
-      
-      if (typeof onAddTheatre === 'function') {
-        onAddTheatre(response); 
+      console.log("response: theater",response);
+      if (response.message === 'Theatre added successfully') {
+        console.log('Theatre added successfully');
+        handleClose();
+        setTheatreData({
+          name: '',
+          seats: '',
+          price: '',
+          timings: [],
+          movieName: '',
+        });
+        setErrors({
+          name: '',
+          seats: '',
+          price: '',
+          timings: '',
+          movieName: '',
+        });
+        if (typeof onAddTheatre === 'function') {
+          onAddTheatre(response);
+        }
+        if (typeof onClose === 'function') {
+          onClose();
+        }
+      } else {
+        console.error('Failed to add theatre:', response.message);
       }
     } catch (error) {
       console.error('Failed to add theatre:', error);
     }
   };
+  
 
   return (
     <div>

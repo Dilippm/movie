@@ -438,6 +438,7 @@ export const editMovie = async (movieId, movieData,file) => {
  }
  /**Add thatre */
  export const AddTheatre = async (theatreData) => {
+  console.log("add therer aapi");
   try {
     const token = localStorage.getItem("ownertoken");
     const response = await axios.post(`${BaseURL}owner/add_theatre`, theatreData, {
@@ -446,10 +447,12 @@ export const editMovie = async (movieId, movieData,file) => {
         'Authorization': `Bearer ${token}`,
       },
     });
+  
     if (response.status!==200) {
       throw new Error('Failed to add theatre');
     }
     const data = await response.data;
+    
     return data;
   } catch (error) {
     throw new Error(`Failed to add theatre: ${error.message}`);
@@ -609,7 +612,7 @@ export const getMoviesByLanguage = async (selectedLanguage, currentPage) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.message);
+    throw error;
   }
 };
 

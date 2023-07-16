@@ -35,6 +35,11 @@ const Theater = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(1);
+  const [open, setOpen] = useState(false); 
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,9 +69,11 @@ const Theater = () => {
   const handleAddTheatre = async (theatreData) => {
     try {
       const response = await AddTheatre(theatreData);
+      console.log(response);
       
       setTheatre([...theatre, response]);
       toast.success('Theatre Added Successfully');
+      handleClose()
     } catch (error) {
       console.error('Failed to add theatre:', error);
     }
@@ -102,7 +109,7 @@ const Theater = () => {
           <b>All Theatres</b>
         </Typography>
         <Box marginTop={4} marginLeft={3}>
-          <AddTheatreForm onAddTheatre={handleAddTheatre} />
+          <AddTheatreForm onAddTheatre={handleAddTheatre} onClose={handleClose} />
         </Box>
         <Box width={'40%'} margin={'auto'} border={"3px solid white"} >
           <TextField

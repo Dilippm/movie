@@ -99,9 +99,8 @@ const SeatSelection = () => {
         let id = reservation.reservationData._id
         navigate(`/booking/${id}`);
       }
-    } catch(error) {
-      console.error('Failed to reserve movie');
-      toast.error('Failed to reserve movie. Please try again.');
+    } catch(error) {  
+      toast.error(error.message);
     }
   };
 
