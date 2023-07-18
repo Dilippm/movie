@@ -128,7 +128,7 @@ const UpCommingMovies = () => {
         backgroundColor: '#e91e63' 
       }
     }}
-    onClick={handleButtonClick}
+    onClick={()=>handleButtonClick(movie._id)}
   >
     Show Details
   </Button>
